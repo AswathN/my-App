@@ -23,11 +23,9 @@ public class App {
 			driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			System.out.println("Launching Web Page");
-			driver.get("https://qa01-www.aeaonline.net");
+			driver.get("https://www.google.com/");
 			System.out.println("Web Page Launched");
 			Thread.sleep(10000);
-			driver.findElement(By.xpath("//a[contains(text(),'Start Application')]")).click();
-			Thread.sleep(5000);
 			System.out.println("<<<<Test Ends>>>>");
 			driver.close();
 		} catch (InterruptedException e) {
