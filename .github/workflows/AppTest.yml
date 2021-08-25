@@ -33,7 +33,6 @@ jobs:
         
   Test2:
   
-    needs: [Test1]
     name: Second Job
     # The type of runner that the job will run on
     runs-on: macos-latest
