@@ -30,17 +30,17 @@ public class App {
 			//String Sauce_Password = System.getenv("Sauce_Password");
 			String Sauce_Accesskey = System.getenv("SAUCE_ACCESS_KEY");
 			System.out.println("Sauce AccessKey : " + Sauce_Accesskey);
-			//String Sauce_Tunnel = "Purposefinancial_tunnel"/*System.getenv("Tunnel")*/;
+			String Sauce_Tunnel = "Purposefinancial_tunnel"/*System.getenv("Tunnel")*/;
 			MutableCapabilities sauceoptions = new MutableCapabilities();
 			//sauceoptions.setCapability("username", Sauce_Username);
 			//sauceoptions.setCapability("accessKey", Sauce_Accesskey);
-			sauceoptions.setCapability("tunnelIdentifier", "Purposefinancial_tunnel");
+			sauceoptions.setCapability("tunnelIdentifier", Sauce_Tunnel);
 			sauceoptions.setCapability("seleniumVersion", "3.141.59");
 			sauceoptions.setCapability("idleTimeout", 120);
 			sauceoptions.setCapability("capturePerformance", true);
-			String Sauce_url = "https://" + Sauce_Username + ":" + Sauce_Accesskey
-					+ "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
-			//String Sauce_url = "https://pravichandran:69b35c27-384f-40f9-84a8-401e9db2b3b0@ondemand.us-west-1.saucelabs.com:443/wd/hub";
+			/*String Sauce_url = "https://" + Sauce_Username + ":" + Sauce_Accesskey
+					+ "@ondemand.us-west-1.saucelabs.com:443/wd/hub";*/
+			String Sauce_url = "https://pravichandran:69b35c27-384f-40f9-84a8-401e9db2b3b0@ondemand.us-west-1.saucelabs.com:443/wd/hub";
 			
 			MutableCapabilities capabilities = new MutableCapabilities();
 			capabilities.setCapability("goog:chromeOptions", new ChromeOptions());
