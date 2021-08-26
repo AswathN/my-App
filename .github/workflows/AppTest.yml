@@ -11,10 +11,6 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   
-env:
-  SAUCE_USERNAME: ${{secrets.SAUCE_USERNAME}}
-  SAUCE_ACCESS_KEY: ${{secrets.SAUCE_ACCESS_KEY}}
-  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "Test1"
@@ -29,12 +25,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-           username: ${{ secrets.SAUCE_USERNAME }}
-           accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
-           data center: us-west-1
+           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
 
       # Runs a single command using the runners shell
       - name: Build test suite-1
         run: |
           mvn clean test
-          saucectl run 
