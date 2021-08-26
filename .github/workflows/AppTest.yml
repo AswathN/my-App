@@ -38,12 +38,14 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build test suite-1
-        run: 
-          saucectl run mvn clean test
+        run: |
+          mvn clean test
+          saucectl run 
         
       - name: Build test suite-2
-        run: 
-          saucectl run mvn clean test
+        run: |
+          mvn clean test
+          saucectl run 
         
   Test2:
   
@@ -66,5 +68,6 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build test suite
-        run: 
-          saucectl run mvn clean test
+        run: |
+          mvn clean test
+          saucectl run 
