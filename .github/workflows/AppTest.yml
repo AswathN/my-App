@@ -27,14 +27,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
-      - uses: actions/checkout@v2
-      
-      - name: Install saucectl
-        uses: saucelabs/saucectl-run-action@v1
+        uses: actions/checkout@v2
         with:
-          skip-run: true
-          testing-environment: ""
-          concurrency: 10
+           username: ${{ secrets.SAUCE_USERNAME }}
+           accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
+           data center: us-west-1
 
       # Runs a single command using the runners shell
       - name: Build test suite-1
