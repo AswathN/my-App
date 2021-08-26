@@ -25,17 +25,30 @@ public class App {
 			WebDriverManager.chromedriver().setup();
 			//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
 			//driver = new ChromeDriver();
-			String Sauce_Username = "PRavichandran";
+			String Sauce_Username = System.getenv("SAUCE_USERNAME");
+			System.out.println("Sauce User : " + Sauce_Username);
 			//String Sauce_Password = System.getenv("Sauce_Password");
-			String Sauce_Accesskey = "69b35c27-384f-40f9-84a8-401e9db2b3b0";
+			String Sauce_Accesskey = System.getenv("SAUCE_ACCESS_KEY");
+			System.out.println("Sauce AccessKey : " + Sauce_Accesskey);
 			//String Sauce_Tunnel = "Purposefinancial_tunnel"/*System.getenv("Tunnel")*/;
-			String Sauce_url = "https://" + Sauce_Username + ":" + Sauce_Accesskey;
+			MutableCapabilities sauceoptions = new MutableCapabilities();
+			//sauceoptions.setCapability("username", Sauce_Username);
+			//sauceoptions.setCapability("accessKey", Sauce_Accesskey);
+			sauceoptions.setCapability("tunnelIdentifier", "Purposefinancial_tunnel");
+			sauceoptions.setCapability("seleniumVersion", "3.141.59");
+			sauceoptions.setCapability("idleTimeout", 120);
+			sauceoptions.setCapability("capturePerformance", true);
+			//String Sauce_url = "https://" + Sauce_Username + ":" + Sauce_Accesskey
+				//	+ "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
+			String Sauce_url = "https://pravichandran:69b35c27-384f-40f9-84a8-401e9db2b3b0@ondemand.us-west-1.saucelabs.com:443/wd/hub";
+			
 			MutableCapabilities capabilities = new MutableCapabilities();
 			capabilities.setCapability("goog:chromeOptions", new ChromeOptions());
 			capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 			capabilities.setCapability("platformName", "Windows 10");
 			capabilities.setCapability("browserVersion", "latest");
-			capabilities.setCapability("browserName", "Chrome");
+			capabilities.setCapability("browserName", "CHROME");
+			capabilities.setCapability("sauce:options", sauceoptions);
 			driver = new RemoteWebDriver(new URL(Sauce_url), capabilities);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			System.out.println("Launching Web Page");
