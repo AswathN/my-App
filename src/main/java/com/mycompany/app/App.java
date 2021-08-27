@@ -39,7 +39,7 @@ public class App {
 			
 			capabilities.setCapability("goog:chromeOptions", new ChromeOptions());
 			capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-			capabilities.setCapability("platformName", "Windows 10");
+			//capabilities.setCapability("platformName", "Windows 10");
 			capabilities.setCapability("browserVersion", "latest");
 			capabilities.setCapability("browserName", "CHROME");
 			capabilities.setCapability("sauce:options", sauceoptions);
@@ -47,7 +47,7 @@ public class App {
 			driver = new RemoteWebDriver(new URL(Sauce_url), capabilities);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			System.out.println("Launching Web Page");
-			driver.get("https://www.google.com/");
+			driver.get("https://qa01-www.aeaonline.net/");
 			System.out.println("Web Page Launched");
 			Thread.sleep(10000);
 			System.out.println("<<<<Test Ends>>>>");
