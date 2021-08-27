@@ -33,7 +33,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Build Test Suite-1
         run: |
-          mvn clean test -Dbrowser="CHROME"
+          mvn clean test -Dbrowser="SAFARI"
 
       # Runs a single command using the runners shell
       - name: Build Test Suite-2 
