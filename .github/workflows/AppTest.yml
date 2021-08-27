@@ -33,12 +33,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: Build Test Suite-1
         run: |
-          mvn clean test
+          mvn clean test -Dbrowser="CHROME"
 
       # Runs a single command using the runners shell
-      - name: Build Test Suite-2
+      - name: Build Test Suite-2 
         run: |
-          mvn clean test
+          mvn clean test -Dbrowser="CHROME"
   Test2:
     name: Second Job - MacOS Run
     # The type of runner that the job will run on  
@@ -51,4 +51,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build Test Suite
-        run: mvn clean test
+        run: mvn clean test -Dbrowser="SAFARI"
