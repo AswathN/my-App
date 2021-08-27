@@ -14,6 +14,7 @@ on:
 env:
   SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
   SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+  SAUCE_TUNNEL: ${{ secrets.SAUCE_TUNNEL }}
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -35,7 +36,7 @@ jobs:
           mvn clean test
 
       # Runs a single command using the runners shell
-      - name: Build Test Suite-1
+      - name: Build Test Suite-2
         run: |
           mvn clean test
   Test2:
