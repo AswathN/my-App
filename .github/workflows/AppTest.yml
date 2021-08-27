@@ -12,8 +12,8 @@ on:
   workflow_dispatch:
 
 env:
-  SAUCE_USERNAME: ${{secrets.SAUCE_USERNAME}}
-  SAUCE_ACCESS_KEY: ${{secrets.SAUCE_ACCESS_KEY}}
+  SAUCE_USERNAME: pravichandran
+  SAUCE_ACCESS_KEY: 69b35c27-384f-40f9-84a8-401e9db2b3b0
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
