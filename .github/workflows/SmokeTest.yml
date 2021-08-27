@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: App Test Workflow
+name: App Workflow - Smoke Test
 
 # Controls when the workflow will run
 on:
@@ -33,7 +33,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Build Test Suite-1
         run: |
-          mvn clean test -Dbrowser="SAFARI"
+          mvn clean test -Dbrowser="CHROME"
 
       # Runs a single command using the runners shell
       - name: Build Test Suite-2 
@@ -51,4 +51,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build Test Suite
-        run: mvn clean test -Dbrowser="CHROME"
+        run: mvn clean test -Dbrowser="SAFARI"
