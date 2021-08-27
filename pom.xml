@@ -31,6 +31,9 @@
 						</goals>
 						<configuration>
 							<mainClass>com.mycompany.app.App</mainClass>
+							<arguments>
+								<argument>${browser}</argument>
+							</arguments>
 						</configuration>
 					</execution>
 				</executions>
