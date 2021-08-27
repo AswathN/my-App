@@ -51,4 +51,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build Test Suite
-        run: mvn clean test -Dbrowser="SAFARI"
+        run: mvn clean test -Dbrowser="CHROME"
