@@ -12,10 +12,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-/**
- * Hello world!
- *
- */
 public class App {
 	private static RemoteWebDriver driver;
 
